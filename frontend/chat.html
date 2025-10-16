@@ -2,14 +2,35 @@
 <html>
 <head>
     <title>Chat</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Chat</h2>
-    <input id="receiverId" placeholder="ID destinatario">
-    <input id="messageContent" placeholder="Scrivi messaggio">
-    <button onclick="sendMessage()">Invia</button>
+    <header>
+        <h2>Messaging App</h2>
+        <div>
+            <span id="currentUser"></span>
+            <a href="profilo.html" style="margin-left: 15px;">Profilo</a>
+            <button onclick="logout()" style="margin-left: 10px;">Logout</button>
+        </div>
+    </header>
 
-    <ul id="messages"></ul>
+    <div class="container">
+        <!-- Lista contatti -->
+        <div class="contacts">
+            <h3>Contatti</h3>
+            <div id="contactsList"></div>
+        </div>
+
+        <!-- Area chat -->
+        <div class="chat-area">
+            <div id="selectedContact"></div>
+            <div id="messagesList"></div>
+            <div>
+                <input id="messageContent" placeholder="Scrivi messaggio..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Invia</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

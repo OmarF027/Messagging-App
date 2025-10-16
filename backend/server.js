@@ -93,5 +93,13 @@ app.get('/messages/:user1/:user2', (req, res) => {
     );
 });
 
+// Lista utenti (per la chat)
+app.get('/users', (req, res) => {
+    db.query('SELECT id, username, avatar FROM users', (err, results) => {
+        if (err) return res.status(500).send('Errore caricamento utenti');
+        res.send(results);
+    });
+});
+
 // ----------------------
 app.listen(3000, () => console.log('Server avviato su http://localhost:3000'));

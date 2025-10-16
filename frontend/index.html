@@ -2,18 +2,27 @@
 <html>
 <head>
     <title>Login / Registrazione</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Registrati</h2>
-    <input id="regUsername" placeholder="Username">
-    <input id="regEmail" placeholder="Email">
-    <input id="regPassword" placeholder="Password" type="password">
-    <button onclick="register()">Registrati</button>
+    <div id="auth-container">
+        <div id="register-section">
+            <h2>Registrati</h2>
+            <input id="regUsername" placeholder="Username">
+            <input id="regEmail" placeholder="Email" type="email">
+            <input id="regPassword" placeholder="Password" type="password">
+            <button onclick="register()">Registrati</button>
+            <p id="regError" style="color: red;"></p>
+        </div>
 
-    <h2>Login</h2>
-    <input id="logEmail" placeholder="Email">
-    <input id="logPassword" placeholder="Password" type="password">
-    <button onclick="login()">Login</button>
+        <div id="login-section">
+            <h2>Login</h2>
+            <input id="logEmail" placeholder="Email" type="email">
+            <input id="logPassword" placeholder="Password" type="password">
+            <button onclick="login()">Login</button>
+            <p id="logError" style="color: red;"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
